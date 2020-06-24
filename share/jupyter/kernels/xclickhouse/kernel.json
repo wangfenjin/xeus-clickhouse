@@ -1,0 +1,9 @@
+{
+    "display_name": "xclickhouse",
+    "argv": [
+        "/home/wangfenjin/miniconda3/envs/xeus-sqlite/bin/xclickhouse",
+        "-f",
+        "{connection_file}"
+    ],
+    "language": "clickhouse"
+}

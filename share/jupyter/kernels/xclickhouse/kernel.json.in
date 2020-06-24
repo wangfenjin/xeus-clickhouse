@@ -1,0 +1,9 @@
+{
+    "display_name": "xclickhouse",
+    "argv": [
+        "@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_BINDIR@/xclickhouse",
+        "-f",
+        "{connection_file}"
+    ],
+    "language": "clickhouse"
+}

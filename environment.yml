@@ -1,0 +1,5 @@
+name: xeus-clickhouse
+channels:
+  - conda-forge
+dependencies:
+  - xeus-clickhouse=0.1.0

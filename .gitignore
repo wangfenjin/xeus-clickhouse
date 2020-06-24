@@ -1,0 +1,44 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Documentation build artefacts
+docs/CMakeCache.txt
+docs/xml/
+docs/build/
+
+*.DS_Store
+build/*
+examples/.ipynb_checkpoints/*
+share/jupyter/kernels/xsqlite/kernel.json
+.ccls-cache/
+
