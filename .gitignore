@@ -39,6 +39,6 @@ docs/build/
 *.DS_Store
 build/*
 examples/.ipynb_checkpoints/*
-share/jupyter/kernels/xsqlite/kernel.json
+share/jupyter/kernels/xclickhouse/kernel.json
 .ccls-cache/
 
