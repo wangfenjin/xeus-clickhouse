@@ -53,6 +53,13 @@ private:
     void connect_db(const std::vector<std::string> tokenized_code);
 
     std::unique_ptr<clickhouse::Client> client;
+
+    void on_exception(const clickhouse::Exception& e);
+    void on_progress(const clickhouse::Progress& progress);
+    void on_data(const clickhouse::Block& block);
+
+    std::string output_format;
+    bool output_stacktrace;
 };
 
 /**

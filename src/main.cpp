@@ -33,7 +33,7 @@ std::string extract_filename(int& argc, char* argv[]) {
 }
 
 // define and turn off for the rest of the test suite
-loglevel_e loglevel = logERROR;
+loglevel_e loglevel = logDEBUG;
 
 int main(int argc, char* argv[]) {
     // Load configuration file
