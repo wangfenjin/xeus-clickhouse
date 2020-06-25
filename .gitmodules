@@ -1,0 +1,4 @@
+[submodule "contrib/clickhouse-cpp"]
+	path = contrib/clickhouse-cpp
+	url = https://github.com/wangfenjin/clickhouse-cpp.git
+	branch = dump

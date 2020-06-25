@@ -73,8 +73,7 @@ find_package(xeus ${xeus_REQUIRED_VERSION} REQUIRED)
 find_package(tabulate REQUIRED)
 find_package(Threads REQUIRED)
 
-include_directories(/usr/local/include)
-link_directories(/usr/local/lib)
+add_subdirectory(contrib/clickhouse-cpp)
 
 # Flags
 # =====
@@ -117,7 +116,7 @@ add_library(xeus-clickhouse SHARED ${XEUS_CLICKHOUSE_SRC} ${XEUS_CLICKHOUSE_HEAD
 # xclickhouse is the target for the kernel executable
 add_executable(xclickhouse src/main.cpp)
 set_target_properties(xclickhouse PROPERTIES ENABLE_EXPORTS 1)
-target_link_libraries(xclickhouse PRIVATE xeus-clickhouse)
+target_link_libraries(xclickhouse PRIVATE xeus-clickhouse clickhouse-cpp-lib)
 
 target_compile_definitions(xclickhouse PRIVATE XEUS_CLICKHOUSE_HOME="${XCLICKHOUSE_PREFIX}")
 
