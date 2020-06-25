@@ -1,4 +1,4 @@
-FROM jupyter/base-notebook:1f318f43ad41
+FROM jupyter/base-notebook:latest
 
 USER root
 
