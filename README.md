@@ -45,7 +45,7 @@ make install
 
 ## Documentation
 
-https://xeus-clickhouse.readthedocs.io/en/latest/
+Refer to examples/
 
 ## Dependencies
 
