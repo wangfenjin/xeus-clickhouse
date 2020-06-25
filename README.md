@@ -1,9 +1,6 @@
-
 # xeus-clickhouse
 
-[![Travis](https://travis-ci.com/wangfenjin/xeus-clickhouse.svg?branch=master)](https://travis-ci.org/wangfenjin/xeus-clickhouse)
-[![Documentation Status](https://readthedocs.org/projects/xeus-clickhouse/badge/?version=latest)](https://xeus-clickhouse.readthedocs.io/en/latest/?badge=latest)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/wangfenjin/xeus-clickhouse/stable?filepath=examples/clickhouse.ipynb)
+[![Travis](https://travis-ci.com/wangfenjin/xeus-clickhouse.svg?branch=master)](https://travis-ci.com/github/wangfenjin/xeus-clickhouse)
 
 **xeus-clickhouse is and early developer preview and is not suitable for general usage yet. Features and implementation are subject to change.**
 
@@ -15,35 +12,16 @@ Launch the Jupyter notebook with `jupyter notebook` or Jupyter lab with `jupyter
 
 ## Installation
 
-xeus-clickhouse has been packaged for the conda package manager.
-
-To ensure that the installation works, it is preferable to install xeus-clickhouse in a fresh conda environment.
-
-To ensure that the installation works, it is preferable to install `xeus` in a fresh conda environment. It is also needed to use
-a [miniconda](https://conda.io/miniconda.html) installation because with the full [anaconda](https://www.anaconda.com/)
-you may have a conflict.
-
-The safest usage is to create an environment named xeus-clickhouse with your miniconda installation
-
-```
-conda create -n xeus-clickhouse
-conda activate xeus-clickhouse
-```
-
 ### Installing from conda
 
-To install xeus-clickhouse with the conda package manager
-
-```
-conda install xeus-clickhouse notebook -c conda-forge
-```
+WIP
 
 ### Installing from source
 
 To install the xeus-clickhouse dependencies
 
 ```bash
-conda install cmake nlohmann_json xtl cppzmq xeus clickhouse-cpp cpp-tabulate=1.2 -c conda-forge
+conda install cmake nlohmann_json xtl cppzmq xeus cpp-tabulate=1.2 -c conda-forge
 ```
 
 Then you can compile the sources
@@ -71,6 +49,10 @@ https://xeus-clickhouse.readthedocs.io/en/latest/
 ## Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) to know how to contribute and set up a development environment.
+
+## Credits
+
+This project is inspired by [xeus-sqlite](https://github.com/jupyter-xeus/xeus-sqlite), and reuse many code/doc from the project! Thanks!
 
 ## License
 

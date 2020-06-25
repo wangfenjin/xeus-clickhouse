@@ -10,8 +10,7 @@
 #ifndef XEUS_CLICKHOUSE_INTERPRETER_HPP
 #define XEUS_CLICKHOUSE_INTERPRETER_HPP
 
-#include <clickhouse/client.h>
-
+#include "clickhouse/client.h"
 #include "nlohmann/json.hpp"
 #include "xeus/xinterpreter.hpp"
 #include "xeus_clickhouse_config.hpp"
