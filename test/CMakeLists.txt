@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.1)
 
 if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
-    project(xeus_sqlite-test)
+    project(xeus_clickhouse-test)
 
     find_package(xeus REQUIRED CONFIG)
-    set(XEUS_SQLITE_INCLUDE_DIR ${xeus_sqlite_INCLUDE_DIRS})
+    set(XEUS_CLICKHOUSE_INCLUDE_DIR ${xeus_clickhouse_INCLUDE_DIRS})
 endif ()
 
 if(NOT CMAKE_BUILD_TYPE)
@@ -76,38 +76,38 @@ set(COMMON_BASE
     main.cpp
 )
 
-set(XEUS_SQLITE_TESTS
+set(XEUS_CLICKHOUSE_TESTS
     test_db.cpp
 )
 
-add_executable(test_xeus_sqlite  ${XEUS_SQLITE_TESTS})
+add_executable(test_xeus_clickhouse  ${XEUS_CLICKHOUSE_TESTS})
 
 if(XSQL_DOWNLOAD_GTEST OR GTEST_SRC_DIR)
-    add_dependencies(test_xeus_sqlite gtest_main)
+    add_dependencies(test_xeus_clickhouse gtest_main)
 endif()
 
 if (APPLE)
-    set_target_properties(test_xeus_sqlite PROPERTIES
+    set_target_properties(test_xeus_clickhouse PROPERTIES
         MACOSX_RPATH ON
     )
 else()
-    set_target_properties(test_xeus_sqlite PROPERTIES
+    set_target_properties(test_xeus_clickhouse PROPERTIES
         BUILD_WITH_INSTALL_RPATH 1
         SKIP_BUILD_RPATH FALSE
     )
 endif()
 
-set_target_properties(test_xeus_sqlite PROPERTIES
+set_target_properties(test_xeus_clickhouse PROPERTIES
     INSTALL_RPATH_USE_LINK_PATH TRUE
 )
 
 
-include_directories(${XSQLITE_INCLUDE_DIRS})
-target_link_libraries(test_xeus_sqlite PRIVATE xeus-sqlite xeus ${GTEST_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
-target_compile_definitions(test_xeus_sqlite PRIVATE XEUS_SQLITE_HOME="${XSQLITE_PREFIX}")
-target_include_directories(test_xeus_sqlite PRIVATE ${XEUS_SQLITE_SRC_DIR})
+include_directories(${XCLICKHOUSE_INCLUDE_DIRS})
+target_link_libraries(test_xeus_clickhouse PRIVATE xeus-clickhouse xeus ${GTEST_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+target_compile_definitions(test_xeus_clickhouse PRIVATE XEUS_CLICKHOUSE_HOME="${XCLICKHOUSE_PREFIX}")
+target_include_directories(test_xeus_clickhouse PRIVATE ${XEUS_CLICKHOUSE_SRC_DIR})
 
 add_custom_target(
     xtest
-    COMMAND test_xeus_sqlite
-    DEPENDS test_xeus_sqlite)
+    COMMAND test_xeus_clickhouse
+    DEPENDS test_xeus_clickhouse)

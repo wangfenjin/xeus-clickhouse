@@ -74,6 +74,7 @@ find_package(tabulate REQUIRED)
 find_package(Threads REQUIRED)
 
 add_subdirectory(contrib/clickhouse-cpp)
+include_directories(contrib/clickhouse-cpp)
 
 # Flags
 # =====

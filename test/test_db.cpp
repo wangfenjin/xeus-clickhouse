@@ -3,12 +3,15 @@
 
 #include "gtest/gtest.h"
 
-#include "xeus-sqlite/xeus_sqlite_interpreter.hpp"
+#include "xeus-clickhouse/xeus_clickhouse_interpreter.hpp"
+#include "logger.h"
 
-namespace xeus_sqlite
+loglevel_e loglevel = logDEBUG;
+
+namespace xeus_clickhouse
 {
 
-TEST(xeus_sqlite_interpreter, sanitize_string_check)
+TEST(xeus_clickhouse_interpreter, sanitize_string_check)
 {
     std::string code = "\n\n Some inp\nut\n";
     std::string sanitized_string;
@@ -16,7 +19,7 @@ TEST(xeus_sqlite_interpreter, sanitize_string_check)
     EXPECT_EQ(sanitized_string, " Some input");
 }
 
-// TEST(xeus_sqlite_interpreter, tokenizer_check)
+// TEST(xeus_clickhouse_interpreter, tokenizer_check)
 // {
 //     std::string code = "%LOAD database.db rw";
 //     std::vector<std::string> tokenized_code;
@@ -24,7 +27,7 @@ TEST(xeus_sqlite_interpreter, sanitize_string_check)
 //     EXPECT_EQ(tokenized_code[2], "database.db");
 // }
 
-// TEST(xeus_sqlite_interpreter, is_magic_check)
+// TEST(xeus_clickhouse_interpreter, is_magic_check)
 // {
 //     std::string code = "%LOAD database.db rw";
 //     EXPECT_TRUE(is_magic(code));
@@ -33,7 +36,7 @@ TEST(xeus_sqlite_interpreter, sanitize_string_check)
 //     EXPECT_FALSE(is_magic(code));
 // }
 
-// TEST(xeus_sqlite_interpreter, create_destroy_db)
+// TEST(xeus_clickhouse_interpreter, create_destroy_db)
 // {
 //     std::vector<std::string> tokenized_code; 
 //     tokenized_code[2] = ".";

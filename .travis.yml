@@ -1,9 +1,9 @@
+dist: bionic
 language: cpp
 env:
   global:
     - MINCONDA_VERSION="latest"
     - MINCONDA_LINUX="Linux-x86_64"
-    - MINCONDA_OSX="MacOSX-x86_64"
 matrix:
   fast_finish: true
   include:
@@ -12,9 +12,6 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-    - os: osx
-      osx_image: xcode10
-      compiler: clang
 install:
     # Define the version of miniconda to download
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
@@ -37,8 +34,12 @@ install:
       fi
     # Activate root environment
     - source activate root
-# Test dependencies
+    # Test dependencies
     - conda install pytest jupyter_kernel_test -c conda-forge;
+    # install cmake 3.17
+    - wget https://cmake.org/files/v3.17/cmake-3.17.0-Linux-x86_64.sh && mkdir /opt/cmake && sh cmake-3.17.0-Linux-x86_64.sh --prefix=/opt/cmake --skip-license && sudo ln -s /opt/cmake/bin/cmake /usr/local/bin/cmake && rm cmake-3.17.0-Linux-x86_64.sh
+    - export PATH=/opt/cmake/bin:$PATH
+    - cmake --version
     # Build and install xeus-clickhouse
     - mkdir build
     - cd build
