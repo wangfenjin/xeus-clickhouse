@@ -12,6 +12,15 @@ Launch the Jupyter notebook with `jupyter notebook` or Jupyter lab with `jupyter
 
 ## Installation
 
+To ensure that the installation works, it is preferable to install xeus-clickhouse in a fresh conda environment. It is also needed to use a miniconda installation because with the full anaconda you may have a conflict.
+
+The safest usage is to create an environment named xeus-clickhouse with your miniconda installation
+
+```bash
+conda create -n xeus-clickhouse
+conda activate xeus-clickhouse
+```
+
 ### Installing from conda
 
 WIP
@@ -52,7 +61,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) to know how to contribute and set up a 
 
 ## Credits
 
-This project is inspired by [xeus-sqlite](https://github.com/jupyter-xeus/xeus-sqlite), and reuse many code/doc from the project! Thanks!
+This project is inspired by [xeus-clickhouse](https://github.com/jupyter-xeus/xeus-sqlite), and reuse many code/doc from the project! Thanks!
 
 ## License
 
