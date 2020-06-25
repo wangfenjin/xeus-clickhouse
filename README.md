@@ -1,14 +1,26 @@
 # xeus-clickhouse
 
 [![Travis](https://travis-ci.com/wangfenjin/xeus-clickhouse.svg?branch=master)](https://travis-ci.com/github/wangfenjin/xeus-clickhouse)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/wangfenjin/xeus-clickhouse/master?filepath=example%2Fclickhouse.ipynb) 
 
 **xeus-clickhouse is and early developer preview and is not suitable for general usage yet. Features and implementation are subject to change.**
 
 `xeus-clickhouse` is a Jupyter kernel for ClickHouse. It's SQL based on the native implementation of the Jupyter protocol [xeus](https://github.com/jupyter-xeus/xeus).
 
-## Usage
+## Give it a Try!
 
-Launch the Jupyter notebook with `jupyter notebook` or Jupyter lab with `jupyter lab` and launch a new SQL notebook by selecting the **xclickhouse** kernel.
+Try it using binder or launch Jupyter using `docker` and launch a new SQL notebook by selecting the **xclickhouse** kernel:
+
+```bash
+# start jupyter with clickhouse kernal
+docker run -d -p 8888:8888 wangfenjin/xeus-clickhouse
+
+# start a local clickhouse for testing
+docker run -d --name jupyter-clickhouse-server -p 8123:8123 --ulimit nofile=262144:262144 yandex/clickhouse-server
+
+# open the example/clickhouse.ipynb and connect to local server by 
+#      %CONNECT --host host.docker.internal --port 8123
+```
 
 ## Installation
 
