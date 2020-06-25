@@ -39,10 +39,10 @@ install:
     - source activate root
 # Test dependencies
     - conda install pytest jupyter_kernel_test -c conda-forge;
-    # Build and install xeus-sqlite
+    # Build and install xeus-clickhouse
     - mkdir build
     - cd build
     - cmake -DCMAKE_INSTALL_PREFIX=$HOME/miniconda -DXSQL_DOWNLOAD_GTEST=ON  -DCMAKE_PREFIX_PATH=$HOME/miniconda ..
     - make -j2 install
 script:
-    - ./test/test_xeus_sqlite
+    - ./test/test_xeus_clickhouse
