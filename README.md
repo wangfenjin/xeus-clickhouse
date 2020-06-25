@@ -63,7 +63,7 @@ Refer to examples/
 
 ``xeus-clickhouse`` depends on
 
-- [xeus](https://github.com/wangfenjin/xeus)
+- [xeus](https://github.com/jupyter-xues/xeus)
 - [clickhouse-cpp](https://github.com/ClickHouse/clickhouse-cpp)
 - [Tabulate](https://github.com/p-ranav/tabulate)
 
