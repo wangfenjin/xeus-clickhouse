@@ -73,7 +73,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) to know how to contribute and set up a 
 
 ## Credits
 
-This project is inspired by [xeus-clickhouse](https://github.com/jupyter-xeus/xeus-sqlite), and reuse many code/doc from the project! Thanks!
+This project is inspired by [xeus-sqlite](https://github.com/jupyter-xeus/xeus-sqlite), and reuse many code/doc from the project! Thanks!
 
 ## License
 
