@@ -13,13 +13,14 @@ Try it using binder or launch Jupyter using `docker` and launch a new SQL notebo
 
 ```bash
 # start jupyter with clickhouse kernal
-docker run -d -p 8888:8888 wangfenjin/xeus-clickhouse
+docker run -p 8888:8888 wangfenjin/xeus-clickhouse
 
 # start a local clickhouse for testing
 docker run -d --name jupyter-clickhouse-server -p 8123:8123 --ulimit nofile=262144:262144 yandex/clickhouse-server
 
 # open the example/clickhouse.ipynb and connect to local server by 
-#      %CONNECT --host host.docker.internal --port 8123
+# %CONNECT --host host.docker.internal --port 8123
+# if can't connect, recommend to install by source
 ```
 
 ## Installation
