@@ -8,7 +8,16 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update \
  && apt-get install -yq --no-install-recommends \
     git \
-    build-essential
+    build-essential \
+    apt-transport-https ca-certificates dirmngr
+
+RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E0C56BD4
+
+RUN echo "deb https://repo.clickhouse.tech/deb/stable/ main/" | sudo tee \
+    /etc/apt/sources.list.d/clickhouse.list
+RUN apt-get update \
+ && apt-get install -y clickhouse-server \
+ && service clickhouse-server start
 
 USER $NB_UID
 WORKDIR $HOME
@@ -21,3 +30,5 @@ RUN git clone --recursive git://github.com/wangfenjin/xeus-clickhouse.git
 WORKDIR $HOME/xeus-clickhouse
 
 RUN mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=$CONDA_DIR -DCMAKE_PREFIX_PATH=$CONDA_DIR .. && make -j2 install
+
+WORKDIR $HOME/xeus-clickhouse/examples
